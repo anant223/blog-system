@@ -9,14 +9,16 @@ const CommentList = ({ postId }) => {
   const [reply, setReply] = useState(null);
   const articleData = useSelector((state) => state.article.data);
   const auth = useSelector((state) => state.auth.userData);
-
+  console.log(auth)
   useEffect(() => {
     const fetchComments = async () => {
       try {
+        
         const response = await dbService.getComments(postId);
         if (response) {
           setComments(response.documents);
         }
+        console.log(response.documents)
       } catch (error) {
         console.log("failed to fetch ", error.message);
       }
@@ -43,7 +45,7 @@ const CommentList = ({ postId }) => {
           <img className="w-5 h-10 rounded-full" src={img} alt="avatar" />
           <div>
             <div className="flex items-center space-x-2">
-              <h3 className="text-sm font-medium">{auth?.userData?.name}</h3>
+              <small className="">{comment.user_id}</small>
               <span className="text-xs text-gray-500">
                 {new Date(comment.$createdAt).toLocaleString("en-us", {
                   hourCycle: "h24",

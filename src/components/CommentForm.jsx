@@ -7,9 +7,7 @@ import img from "../assets/react.svg";
 
 
 const CommentForm = ({parentCommentid = null, onCancel}) => {
-  const dispatch = useDispatch()
   const {register, handleSubmit} = useForm()
-  const [isExpand, setIsExpand] = useState(false)
   const user = useSelector((state)=> state.auth.userData);
   const post = useSelector((state) => state.article.data);
 

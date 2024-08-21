@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch} from "react-redux";
 import authService from "./service/authservice";
 import { login, logout } from "./slice/authSlice";
-import {Header, Footer} from "./components/index"
+import {Header, Footer, Layout} from "./components/index"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,12 +22,13 @@ function App() {
       .finally(() => setIsLoading(false));
   }, [dispatch]);
 
-  return isLoading ? null : 
-  <> 
-    <Header/>
-      <Outlet/>
-    <Footer/>
-  </>;
+  return isLoading ? null : (
+    <>
+      <Header />
+        <Outlet />
+      <Footer />
+    </>
+  );
 }
 
 export default App;

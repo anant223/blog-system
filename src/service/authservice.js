@@ -5,6 +5,7 @@ import { Client, Account, ID } from "appwrite";
 export class AuthService {
   client = new Client();
   account;
+  
 
   constructor() {
     this.client
@@ -27,7 +28,7 @@ export class AuthService {
         return newUserAccount;
       }
     } catch (error) {
-        console.log("Appwrite Service :: create Account ::", error.message);
+      console.log("Appwrite Service :: create Account ::", error.message);
       throw error.message;
     }
   }
@@ -36,7 +37,7 @@ export class AuthService {
     try {
       return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
-     console.log("Appwrite Service :: Login Account ::", error.message);
+      console.log("Appwrite Service :: Login Account ::", error.message);
       throw error;
     }
   }

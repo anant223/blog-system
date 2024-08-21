@@ -8,11 +8,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navItems = [
-    {
-      name: "Home",
-      slug: "/",
-      active: true,
-    },
+ 
     {
       name: "Login",
       slug: "/login",
@@ -44,10 +40,12 @@ const Header = () => {
   return (
     <header className="">
       <div className="navbar border-b-2 border-slate-700 text-white bg-base-100 flex w-full justify-between px-[80px]">
-        <Link className="btn btn-ghost text-xl">MyBlog</Link>
+        <Link className="btn btn-ghost text-xl" to={"/"}>
+          BlogNest
+        </Link>
 
-        <div className="navbar-end">
-          <ul className="menu menu-horizontal px-1">
+        <div className="">
+          <ul className="text-sm menu menu-horizontal p-1">
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.slug}>
@@ -55,13 +53,13 @@ const Header = () => {
                 </li>
               ) : null
             )}
+            {authStatus && (
+              <li onClick={handleLogoutClick}>
+                <Link to={"/"}>Logout</Link>
+              </li>
+            )}
           </ul>
         </div>
-        {authStatus && (
-          <div onClick={handleLogoutClick} className="navbar-end">
-            <Link className="/">Log Out</Link>
-          </div>
-        )}
       </div>
     </header>
   );
