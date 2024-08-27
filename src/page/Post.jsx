@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useState} from 'react'
 import {Btn, CommentForm, CommentList} from "../components/index"
 import { useDispatch, useSelector } from 'react-redux'
 import dbService from '../service/dbservice'
@@ -10,11 +10,11 @@ import { getData } from '../slice/dbSlice'
 const Post = () => {
   const dispatch = useDispatch();
   const post = useSelector((state) => state.article.data);
-  const auth = useSelector((state) => state.auth.status)
   const {slug} = useParams()
   const navigate = useNavigate()
   const userData = useSelector((status)=> status.auth.userData)
   const isAuther = post && userData ? userData.$id === post.userid : false
+  
   useEffect((()=>{
     dbService.getPost(slug).then((post) =>{
       console.log(post)
@@ -35,6 +35,8 @@ const Post = () => {
       }
      })
   }
+
+  
   return post ? (
     <div className="max-w-3xl mx-auto p-4">
       <article className="mb-8">
@@ -54,12 +56,8 @@ const Post = () => {
       <div>
         <h2 className="text-xl font-semibold mb-4">Comments</h2>
       </div>
-     {auth && <section className="mb-8">
-        <CommentForm />
-      </section>
-      }
 
-      <section>
+      <section className="mb-8">
         <CommentList postId={post.$id} />
       </section>
     </div>

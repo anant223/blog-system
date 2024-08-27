@@ -18,11 +18,7 @@ const HomePage = () => {
   }),[])
   console.log(posts)
 
-  // useEffect((() =>{
-  //   if(slug){
 
-  //   }
-  // }), [])
   
   return (
     <div className="w-full h-[100vh] px-[80px] py-[80px]">
