@@ -4,7 +4,7 @@ import dbService from "../service/dbservice";
 import img from "../assets/react.svg";
 
 const CommentList = ({ postId }) => {
-
+  const [commentLength, setCommentLength] = useState()
   const [comments, setComments] = useState([]);
   const [reply, setReply] = useState(null);
   const [expand, setExpand] = useState(null);
@@ -28,6 +28,14 @@ const CommentList = ({ postId }) => {
 
  const handleToggleRepiese = (index) =>{
   setExpand(expand === index ? null : index)
+ }
+
+ const replyCount = (comment) =>{
+      const replyCount = comments.filter(
+        (chidComment) => chidComment.parent_id === comment.$id
+      ).length;
+
+
  }
  const handleAddComment = (newComment) => {
   setComments((prevComments) => [ newComment,...prevComments]);
@@ -53,7 +61,6 @@ const CommentList = ({ postId }) => {
   const renderComments = (parentId = null) => {
     const filteredComment = comments.filter((comment) => comment.parent_id === parentId)
     return filteredComment.map((comment, index) => {
-      const replyCount = comments.filter((chidComment) => chidComment.parent_id ===  comment.$id).length;
       return <div key={comment.$id} className={`flex space-x-4 ${parentId ? "ml-10" : ""}`}>
           <img className="w-5 h-10 rounded-full" src={img} alt="avatar" />
           <div>
