@@ -29,55 +29,10 @@ const Register = () => {
     }
   }
   return (
-    // <div className="hero bg-base-200 min-h-screen">
-    //   <div className="hero-content flex-col lg:flex-row-reverse">
-    //     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-    //       <form className="card-body" onSubmit={handleSubmit(registerAccount)}>
-    //         <div className="form-control">
-    //           <Input
-    //             label="Name"
-    //             type="text"
-    //             placeholder="Name"
-    //             {...register("name", { required: true })}
-    //           />
-    //         </div>
-    //         <div className="form-control">
-    //           <Input
-    //             label="Email"
-    //             type="email"
-    //             placeholder="email"
-    //             {...register("email", {
-    //               required: true,
-    //               validate: {
-    //                 matchPattern: (value) =>
-    //                   /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-    //                     value
-    //                   ) || "Email Address must be valid",
-    //               },
-    //             })}
-    //           />
-    //         </div>
-    //         <div className="form-control">
-    //           <Input
-    //             label="Password"
-    //             type="password"
-    //             placeholder="Password"
-    //             {...register("password", { required: true })}
-    //           />
-    //         </div>
-    //         <div className="form-control mt-6">
-    //           <Btn name="Sign Up" />
-    //         </div>
-    //         <div className="form-control mt-6">
-    //           <span>{error}</span>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
-    // </div>
+
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center text-gray-100">Login</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-100">Sign Up</h2>
         <form className="mt-6" onSubmit={handleSubmit(registerAccount)}>
           <div>
             <Input
