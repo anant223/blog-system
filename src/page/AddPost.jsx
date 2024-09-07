@@ -4,7 +4,7 @@ import { PostFrom } from '../components'
 const AddPost = () => {
 
   return (
-    <div className='py-10 px-[80px]'>
+    <div className='py-10 sm:px-[80px]'>
         <PostFrom/>
     </div>
   )

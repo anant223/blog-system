@@ -38,14 +38,15 @@ const Header = () => {
     }
   };
   return (
-    <header className="">
-      <div className="navbar border-b-2 border-slate-700 text-white bg-base-100 flex w-full justify-between px-[80px]">
-        <Link className="btn btn-ghost text-xl" to={"/"}>
-          BlogNest
-        </Link>
-
+    <header className="w-full border-b-2 border-slate-700 text-white ">
+      <div className="sm:px-[80px] flex items-center justify-between">
+        <div>
+          <Link className="text-xl p-4" to={"/"}>
+            BlogNest
+          </Link>
+        </div>
         <div className="">
-          <ul className="text-sm menu menu-horizontal p-1">
+          <ul className="flex p-4 gap-5">
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.slug}>
@@ -66,3 +67,8 @@ const Header = () => {
 };
 
 export default Header;
+{/* <div className="navbar border-b-2 border-slate-700 text-white bg-base-100 flex w-full justify-between px-[80px]">
+  
+
+  
+</div> */}

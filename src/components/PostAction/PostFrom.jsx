@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const PostFrom = ({post}) => {
-  // console.log(post)
+  
   const userData = useSelector((state)=> state.auth.userData);
   const navigate = useNavigate()
 
@@ -77,7 +77,7 @@ const PostFrom = ({post}) => {
   return (
     <div>
       <form onSubmit={handleSubmit(handlePost)} className="flex flex-wrap">
-        <div className="w-2/3 px-2">
+        <div className="px-5">
           <Input
             label="Title"
             placeholder="Title"
@@ -95,7 +95,7 @@ const PostFrom = ({post}) => {
               })
             }
           />
-          <div className=" mt-4">
+          <div className=" mt-4 sm:w-full">
             <RTE
               label="Content"
               name="content"
