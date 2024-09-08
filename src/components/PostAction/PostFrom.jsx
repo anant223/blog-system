@@ -41,6 +41,7 @@ const PostFrom = ({post}) => {
         const fileId = file.$id;
         data.featuredImage = fileId;
         console.log(data)
+        console.log(userData);
         const dbPost = await dbService.createPost({...data, userid: userData.userData.$id})
         // console.log(dbPost)
         if(dbPost){

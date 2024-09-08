@@ -29,9 +29,7 @@ const Register = () => {
     }
   }
   return (
-
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+      <div className="sm:bg-gray-800 bg-transparent p-8 rounded-lg sm:shadow-lg w-full max-w-sm">
         <h2 className="text-2xl font-bold text-center text-gray-100">Sign Up</h2>
         <form className="mt-6" onSubmit={handleSubmit(registerAccount)}>
           <div>
@@ -80,7 +78,7 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </div>
+    // </div>
   );
 }
 

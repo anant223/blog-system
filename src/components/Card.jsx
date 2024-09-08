@@ -4,25 +4,27 @@ import { Link } from 'react-router-dom';
 
 const Card = ({$id, featuredImage, title}) => {
   return (
-    <div className="h-auto rounded-md border flex">
+    <div className="w-full shadow-lg bg-gray-900 rounded-lg p-[20px] ">
       <img
         src={dbService.getFilePreview(featuredImage)}
         alt="Laptop"
-        className="w-40 p-2 rounded-md object-cover"
+        className="h-[250px] sm:h-[210px] object-cover rounded-sm"
       />
-      <div className="p-4">
-        <h1 className="text-lg font-semibold">{title}</h1>
-        <p className="mt-3 text-sm text-gray-600">
+      <div className="">
+        <h1 className="text-[21px] py-2 line-clamp-1">{title}</h1>
+        <p className="py-2 line-clamp-4 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
           debitis?
         </p>
-        <button
-          type="button"
-          className="mt-4 rounded-sm bg-black px-2.5 py-1 text-[14px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black mr-4"
-        >
-          <Link to={`/post/${$id}`}>Read</Link>
-        </button>
-        <button className="mt-4 rounded-sm bg-black px-2.5 py-1 text-[14px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Liked {" 0"}</button>
+        <div className="flex gap-5 justify-between p-2">
+          <button className="">👍🏻{"10"}</button>
+          <button
+            type="button"
+            className=" bg-slate-600 text-white p-1 rounded-lg"
+          >
+            <Link to={`/post/${$id}`}>Read More...</Link>
+          </button>
+        </div>
       </div>
     </div>
   );

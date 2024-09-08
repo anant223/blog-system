@@ -15,6 +15,7 @@ export class DBService {
   }
 
   async createPost({ title, slug, content, featuredImage, status, userid }) {
+    console.log(typeof content);
     try {
       const newDoc = await this.databases.createDocument(
         config.appwriteDatabaseId,

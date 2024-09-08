@@ -29,51 +29,7 @@ const Login = () => {
   }
 
   return (
-    // <div className="hero bg-base-200 min-h-screen">
-    //   <div className="hero-content flex-col lg:flex-row-reverse">
-    //     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-    //       <form className="card-body" onSubmit={handleSubmit(loginSession)}>
-    //         <div className="form-control">
-    //           <Input
-    //             label="Email"
-    //             type="email"
-    //             placeholder="email"
-    //             {...register("email", {
-    //               required: true,
-    //               validate: {
-    //                 matchPattern: (value) =>
-    //                   /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-    //                     value
-    //                   ) || "Email Address must be valid",
-    //               },
-    //             })}
-    //           />
-    //         </div>
-    //         <div className="form-control">
-    //           <Input
-    //             label="Password"
-    //             type="password"
-    //             placeholder="Password"
-    //             {...register("password", { required: true })}
-    //           />
-    //           <label className="label">
-    //             <a href="#" className="label-text-alt link link-hover">
-    //               Forgot password?
-    //             </a>
-    //           </label>
-    //         </div>
-    //         <div className="form-control mt-6">
-    //           <Btn name="Log In" />
-    //         </div>
-    //         <div className="form-control mt-6">
-    //           <span>{error}</span>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
-    // </div>
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+      <div className="sm:bg-gray-800 p-8 rounded-lg sm:shadow-lg w-full max-w-sm">
         <h2 className="text-2xl font-bold text-center text-gray-100">Login</h2>
         <form className="mt-6" onSubmit={handleSubmit(loginSession)}>
           <div>
@@ -119,7 +75,7 @@ const Login = () => {
           </a>
         </p>
       </div>
-    </div>
+    
   );
 }
 

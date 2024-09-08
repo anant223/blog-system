@@ -21,8 +21,8 @@ const HomePage = () => {
 
   
   return (
-    <div className="w-full h-[100vh] sm:px-[80px] py-[80px] px-5">
-      <div className="grid sm:grid-cols-3 grid-cols-1">
+    <div className="w-full min-h-screen sm:px-[80px] py-[80px]">
+      <div className="grid p-4 sm:grid-cols-2 sm: lg:grid-cols-3 grid-cols-1 gap-5">
         {posts?.map((post, i) => (
           <Card {...post} key={i} />
         ))}
