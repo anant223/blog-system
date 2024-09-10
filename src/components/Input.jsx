@@ -7,19 +7,16 @@ const Input = React.forwardRef(function Input(
   const id = useId();
 
   return (
-    <div className="w-full">
+    <div className="w-full my-6">
       {label && (
-        <label htmlFor={id} className="px-1 py-10">
-          <span className="label-text">{label}</span>
+        <label
+          htmlFor={label}
+          className="block text-gray-700 text-sm font-bold mb-2"
+        >
+          <span className="label-text py-8 my-2">{label}</span>
         </label>
       )}
-      <input
-        type={type}
-        className={className}
-        ref={ref}
-        id={id}
-        {...props}
-      />
+      <input type={type} className={className} ref={ref} id={id} {...props} />
     </div>
   );
 });

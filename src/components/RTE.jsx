@@ -5,11 +5,12 @@ import config from "../conf/config";
 export default function RTE({ name, control, label, defaultValue ="" }) {
   return (
     <div className="w-full">
-      {label && <label className="inline-block mb-1 pl-1">{label}</label>}
+      {label && <label className="inline-block pl-1">{label}</label>}
 
       <Controller
         api=""
         name={name || "content"}
+        className="mt-4"
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
@@ -17,7 +18,7 @@ export default function RTE({ name, control, label, defaultValue ="" }) {
             apiKey={config.tinyMCEId}
             init={{
               initialValue: defaultValue,
-              height: 300,
+              height: 400,
               menubar: true,
               plugins: [
                 "image",
@@ -42,9 +43,11 @@ export default function RTE({ name, control, label, defaultValue ="" }) {
                 "anchor",
               ],
               toolbar:
-                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                "undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent",
               content_style:
-                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px;}",
+              content_css: "dark",
+              skin: "oxide-dark",
             }}
             onEditorChange={onChange}
           />
